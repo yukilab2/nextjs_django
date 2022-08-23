@@ -1,0 +1,15 @@
+# use systemctl
+
+[Unit]
+Description=gunicorn daemon
+After=netwrok.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/var/www/cgi/mysite
+EnvironmentFile=/etc/profile.d/env.productio.sh
+ExecStart=/home/ubuntu/venv/bin/gunicorn --config /etc/systemd/system/gunicorn.conf.py mysite.wsgi.application
+
+[Install]
+WantedBy=multi-user.target

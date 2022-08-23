@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 # from rest_framework import routers
 from mysite_api import urls as mysite_api_urls
+from frontend import views as frontend_views
 
 # router = routers.DefaultRouter()
 urlpatterns = [
